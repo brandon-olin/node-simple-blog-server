@@ -3,7 +3,7 @@ const validator = require('validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
-// const Article = require('./article')
+const Article = require('./article')
 
 const userSchema = new mongoose.Schema(
   {
@@ -94,6 +94,12 @@ userSchema.pre('save', async function (next) {
   if (user.isModified('password')) {
     user.password = await bcrypt.hash(user.password, 8)
   }
+  next()
+})
+
+userSchema.pre('remove', async function (next) {
+  const user = this
+  await Article.deleteMany({ owner: user._id })
   next()
 })
 
