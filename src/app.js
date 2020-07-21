@@ -4,11 +4,11 @@ const articleRouter = require('./routers/article')
 const userRouter = require('./routers/user')
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 
 // Database
 mongoose
-  .connect('mongodb://127.0.0.1:27017/simple-blog-db', {
+  .connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
