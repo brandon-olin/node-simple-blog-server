@@ -2,9 +2,10 @@
   "name": "simple_blog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "env-cmd -f ./config/dev.env nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,11 +19,22 @@
   },
   "homepage": "https://github.com/brandon-olin/node-simple-blog#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.9",
-    "mongoose": "^5.9.24"
+    "mongoose": "^5.9.24",
+    "validator": "^13.1.1"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "eslint": "^7.4.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "nodemon": "^2.0.4"
   }
 }
