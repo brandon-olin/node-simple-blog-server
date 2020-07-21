@@ -8,7 +8,7 @@ const port = process.env.PORT
 
 // Database
 mongoose
-  .connect(process.env.MONGODB_URL, {
+  .connect('mongodb://127.0.0.1:27017/simple-blog-api', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
