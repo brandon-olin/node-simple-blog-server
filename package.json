@@ -2,10 +2,10 @@
   "name": "simple_blog",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/app.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node ./src/app.js",
-    "dev": "env-cmd -f ./config/dev.env nodemon ./src/app.js"
+    "start": "node src/app.js",
+    "dev": "env-cmd -f ./config/dev.env nodemon src/app.js"
   },
   "repository": {
     "type": "git",
