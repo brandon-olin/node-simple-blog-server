@@ -4,6 +4,7 @@ const articleRouter = require('./routers/article')
 const userRouter = require('./routers/user')
 
 const app = express()
+const cors = require('cors')
 const port = process.env.PORT
 
 // Database
@@ -20,6 +21,7 @@ mongoose
 // Middleware
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(cors())
 
 // Routers
 app.use(articleRouter)
